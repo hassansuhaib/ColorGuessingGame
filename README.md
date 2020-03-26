@@ -1,0 +1,2 @@
+A color guessing game which generates random colors and gives you an RGB value and you have to guess which color appears to have that RGB value. There are two mode: Easy and Hard. It's a very basic game.
+I am making it just to practice my JavaScript and CSS skills as I am a code newbie.
