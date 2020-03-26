@@ -6,10 +6,19 @@ body {
     background-color: #242424;
     margin: 0;
     padding: 0;
+    color: white;
+    font-family: monospace, sans-serif;
 }
 
 header {
     text-align: center;
+    padding: 20px;
+}
+
+.optionPanel {
+    text-align: center;
+    background-color: beige;
+    color: black;
 }
 
 .container {
@@ -32,4 +41,13 @@ main {
     height: 160px;
     background-color: aqua;
     margin: 20px;
+    border-radius: 15%;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-family: monospace, sans-serif;
+    background-color: burlywood;
 }
