@@ -12,7 +12,7 @@ body {
 
 header {
     text-align: center;
-    padding: 20px;
+    padding: 40px;
 }
 
 .optionPanel {
@@ -39,7 +39,6 @@ main {
 .color {
     width: 160px;
     height: 160px;
-    background-color: aqua;
     margin: 20px;
     border-radius: 15%;
 }
