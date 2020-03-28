@@ -36,16 +36,25 @@ header {
 }
 
 .container {
-    max-width: 600px;
-    margin: 40px auto;
+    max-width: 800px;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
-
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .color {
-    width: 30%;
-    margin: 1.66%;
-    padding-bottom: 30%;
-    float: left;
+    width: 160px;
+    height: 160px;
+    margin: 20px;
     border-radius: 15%;
     transition: all 0.25s;
 }
