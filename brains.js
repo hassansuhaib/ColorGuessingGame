@@ -1,4 +1,4 @@
-var winMessages = ["Yay! You Won!", "Nice Job!", "Awesome!", "Let's GOOO!", "!Noob", "Hasta La Vista!"];
+var winMessages = ["Yay! You Won!", "Nice Job!", "Awesome!", "Let's GO!", "!Noob", "Hasta La Vista!"];
 var color = [];
 var boxes = document.querySelectorAll(".color");
 var newGame = document.querySelector("#btn-1");
@@ -23,7 +23,7 @@ for(let i = 0; i < boxes.length; i++){
             win();
         }
         else {
-            this.style.display = "none";
+            this.style.backgroundColor = "#242424";
             message.textContent = "Try Again!";
         }
     })
@@ -38,6 +38,7 @@ function randomChoiceGenerator(selectedMode) {
 function win() {
     newGame.textContent = "Play Again?";
     message.textContent = winMessages[randomSelection];
+    colorGuess.style.color = color[randomSelection];
     for(let i = 0; i < selectedMode; i++){
         boxes[i].style.display = "block";
         boxes[i].style.backgroundColor = choice;
@@ -60,6 +61,7 @@ function stage() {
     randomSelection = randomChoiceGenerator(selectedMode);
     choice = color[randomSelection];
     colorGuess.textContent = choice;
+    colorGuess.style.color = "white";
     message.textContent = " ";
     setColor();
 }
@@ -84,8 +86,8 @@ function reset() {
 
 //Set the game mode to easy
 function setEasyMode(){
-    modeButtons[1].classList.remove("selected");
-    modeButtons[0].classList.add("selected");
+    modeButtons[1].classList.remove("hardSelected");
+    modeButtons[0].classList.add("easySelected");
     selectedMode = 3;
     for(let i = 0; i < boxes.length; i++){
         boxes[i].style.display = "none";
@@ -95,8 +97,8 @@ function setEasyMode(){
 
 //Set the game mode to hard
 function setHardMode(){
-    modeButtons[0].classList.remove("selected");
-    modeButtons[1].classList.add("selected");
+    modeButtons[0].classList.remove("easySelected");
+    modeButtons[1].classList.add("hardSelected");
     selectedMode = 6;
     reset();
 }

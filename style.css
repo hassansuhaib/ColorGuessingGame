@@ -12,17 +12,26 @@ body {
 
 header {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
+    background-image: linear-gradient(to bottom right,#5D6D7E, #34495E);
 }
 
 #welcomeNote{
     font-size: 40px;
     font-weight: 900;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+#message {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 30px;
 }
 
 .optionPanel {
     text-align: center;
-    background-color: beige;
+    background-color: #2C3E50;
     color: black;
 }
 
@@ -47,19 +56,59 @@ main {
     height: 160px;
     margin: 20px;
     border-radius: 15%;
+    transition: all 0.25s;
+}
+
+.color:hover {
+    transform: scale(1.1);
+    transition: all 0.25s;
 }
 
 button {
     border: none;
     outline: none;
-    padding: 10px;
+    padding: 15px;
     font-family: monospace, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    background-color: #212F3D ;
+    color: white;
 }
+
+button:hover {
+    background-color: #10508A;
+    transition: all 0.25s;
+} 
 
 #colorGuess {
     text-transform: uppercase;
 }
 
-.selected {
-    background-color: blue;
+#result {
+    display: inline-block;
+    width: 20%;
+    margin: 0;
+    height: auto;
+    color: white;    
+    font-family: monospace, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.hardSelected {
+    background-color: #CD6155;
+}
+
+.easySelected {
+    background-color: #229954;
+}
+
+@media (max-width: 768px) {
+    #welcomeNote {
+        font-size: 30px;
+    }
+
+    #message {
+        font-size: 20px;
+    }
 }
