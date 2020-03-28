@@ -36,25 +36,16 @@ header {
 }
 
 .container {
-    max-width: 800px;
-    height: auto;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    max-width: 600px;
+    margin: 40px auto;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .color {
-    width: 160px;
-    height: 160px;
-    margin: 20px;
+    width: 30%;
+    margin: 1.66%;
+    padding-bottom: 30%;
+    float: left;
     border-radius: 15%;
     transition: all 0.25s;
 }
