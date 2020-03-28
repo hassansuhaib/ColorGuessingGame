@@ -12,7 +12,12 @@ body {
 
 header {
     text-align: center;
-    padding: 40px;
+    padding: 20px;
+}
+
+#welcomeNote{
+    font-size: 40px;
+    font-weight: 900;
 }
 
 .optionPanel {
@@ -28,7 +33,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 main {
@@ -49,4 +54,8 @@ button {
     padding: 10px;
     font-family: monospace, sans-serif;
     background-color: burlywood;
+}
+
+#colorGuess {
+    text-transform: uppercase;
 }
