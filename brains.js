@@ -1,12 +1,17 @@
+var winMessages = ["Yay! You Won!", "Nice Job!", "Awesome!", "Let's GOOO!", "!Noob", "Hasta La Vista!"];
 var color = [];
 var boxes = document.querySelectorAll(".color");
 var newGame = document.querySelector("#btn-1");
 var colorGuess = document.querySelector("#colorGuess");
+var message = document.querySelector("#result");
+var modeButtons = document.querySelectorAll(".mode");
 var selectedMode = 6;
 var randomSelection;
 var choice;
 
 newGame.addEventListener("click", reset);
+modeButtons[0].addEventListener("click", setEasyMode);
+modeButtons[1].addEventListener("click", setHardMode);
 
 stage();
 
@@ -19,6 +24,7 @@ for(let i = 0; i < boxes.length; i++){
         }
         else {
             this.style.display = "none";
+            message.textContent = "Try Again!";
         }
     })
 }
@@ -30,8 +36,9 @@ function randomChoiceGenerator(selectedMode) {
 
 //Diplay all the blocks when the player wins
 function win() {
-    newGame.textContent = "Play Again?"
-    for(let i = 0; i < boxes.length; i++){
+    newGame.textContent = "Play Again?";
+    message.textContent = winMessages[randomSelection];
+    for(let i = 0; i < selectedMode; i++){
         boxes[i].style.display = "block";
         boxes[i].style.backgroundColor = choice;
     }
@@ -53,6 +60,7 @@ function stage() {
     randomSelection = randomChoiceGenerator(selectedMode);
     choice = color[randomSelection];
     colorGuess.textContent = choice;
+    message.textContent = " ";
     setColor();
 }
 
@@ -65,10 +73,30 @@ function setColor() {
 
 //Reset the game
 function reset() {
-    newGame.textContent = "New Colors"
+    newGame.textContent = "New Colors";
+    message.textContent = " ";
     color = [];
     stage();
     for(let i = 0; i < selectedMode; i++){
         boxes[i].style.display = "block";
     }
+}
+
+//Set the game mode to easy
+function setEasyMode(){
+    modeButtons[1].classList.remove("selected");
+    modeButtons[0].classList.add("selected");
+    selectedMode = 3;
+    for(let i = 0; i < boxes.length; i++){
+        boxes[i].style.display = "none";
+    }
+    reset();
+}
+
+//Set the game mode to hard
+function setHardMode(){
+    modeButtons[0].classList.remove("selected");
+    modeButtons[1].classList.add("selected");
+    selectedMode = 6;
+    reset();
 }

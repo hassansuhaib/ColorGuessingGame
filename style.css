@@ -33,7 +33,8 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    align-content: center;
 }
 
 main {
@@ -53,9 +54,12 @@ button {
     outline: none;
     padding: 10px;
     font-family: monospace, sans-serif;
-    background-color: burlywood;
 }
 
 #colorGuess {
     text-transform: uppercase;
+}
+
+.selected {
+    background-color: blue;
 }
